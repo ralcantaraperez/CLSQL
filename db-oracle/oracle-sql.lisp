@@ -464,6 +464,7 @@ the length of that format.")
                             +oci-fetch-next+ +oci-default+)))
              (ecase oci-code
                (#.+oci-success+ (values))
+               (#.+oci-success-with-info+ (values))
                (#.+oci-no-data+ (setf (qc-oci-end-seen-p qc) t)
                                 (values))
                (#.+oci-error+ (handle-oci-error :database (qc-db qc)
